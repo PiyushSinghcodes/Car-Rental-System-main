@@ -35,7 +35,8 @@ python manage.py createsuperuser
 # Run the development server
 python manage.py runserver
 ```
-
+OR 
+We can build and run the docker file directly 
 ## Author
 * Piyush Singh
   * LinkedIn: [Piyush Singh](https://www.linkedin.com/in/piyush-singh908)
