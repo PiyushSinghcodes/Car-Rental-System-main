@@ -1,0 +1,202 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us{% endblock title %}
+
+{% block body %}
+<style>
+  .founder-hero {
+    background: linear-gradient(135deg, #1a1c2e 0%, #2d3047 100%);
+    padding: 100px 0;
+    color: white;
+    margin-bottom: 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .founder-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('{% static "circuit-pattern.png" %}');
+    opacity: 0.1;
+    animation: slide 20s linear infinite;
+  }
+
+  @keyframes slide {
+    from { background-position: 0 0; }
+    to { background-position: 1000px 0; }
+  }
+
+  .founder-profile {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 50px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .founder-image-container {
+    width: 280px;
+    height: 280px;
+    margin: 0 auto 30px;
+    position: relative;
+    border-radius: 50%;
+    padding: 8px;
+    background: linear-gradient(45deg, #00f2fe, #4facfe);
+  }
+
+  .founder-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #1a1c2e;
+    background: #1a1c2e;
+  }
+
+  .social-links {
+    margin-top: 30px;
+  }
+
+  .social-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 12px 30px;
+    border: 2px solid #4facfe;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    background: linear-gradient(45deg, #00f2fe, #4facfe);
+    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+  }
+
+  .social-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(79, 172, 254, 0.5);
+  }
+
+  .feature-card {
+    padding: 35px;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+    border: 1px solid #eee;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  .feature-icon {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(45deg, #00f2fe, #4facfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+  }
+
+  .journey-section {
+    background: #f8f9fa;
+    padding: 80px 0;
+    position: relative;
+  }
+
+  .journey-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0,242,254,0.05), rgba(79,172,254,0.05));
+  }
+</style>
+
+<!-- Founder Hero Section -->
+<div class="founder-hero">
+  <div class="container">
+    <div class="founder-profile text-center">
+      <div class="founder-image-container">
+        <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" class="founder-image" alt="Coding Animation">
+      </div>
+      <h1 class="display-4 fw-bold mb-3">Piyush Singh</h1>
+      <h2 class="h3 mb-4">Tech Enthusiast </h2>
+      <p class="lead mb-4">
+        Passionate tech innovator and enthusiast with a vision to solve real world problems. 
+        Combining technology with exceptional service to create memorable experiences.
+      </p>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/piyush-singh908" class="social-link" target="_blank">
+          <i class="fab fa-linkedin me-2"></i>Connect on LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Company Features -->
+<div class="container mb-5">
+  <h2 class="section-title text-center">What Makes CarZest Special?</h2>
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="feature-card text-center">
+        <img src="https://media.giphy.com/media/3oKIPEqDGUULpEU0aQ/giphy.gif" class="feature-icon" alt="Safety">
+        <h3 class="h4 mb-3">Safety First, Always</h3>
+        <p>Your safety is our top priority! Each vehicle undergoes rigorous bi-weekly inspections and maintenance checks.</p>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="feature-card text-center">
+        <img src="https://media.giphy.com/media/3o7TKMfn35NL1llPig/giphy.gif" class="feature-icon" alt="Luxury">
+        <h3 class="h4 mb-3">Luxury Meets Affordability</h3>
+        <p>Experience premium comfort without breaking the bank! We offer flexible payment options and transparent pricing.</p>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="feature-card text-center">
+        <img src="https://media.giphy.com/media/3o7TKMt1VVNkHV2PaE/giphy.gif" class="feature-icon" alt="Clean">
+        <h3 class="h4 mb-3">Spotlessly Clean</h3>
+        <p>Step into freshness with our meticulously cleaned vehicles! Each car is thoroughly sanitized before your arrival.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Company Story -->
+<div class="journey-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="section-title">Our Journey</h2>
+        <p class="lead">
+          Since 2012, CarZest has been turning everyday drives into extraordinary adventures. 
+          Our passion for automobiles and commitment to customer satisfaction has made us a trusted name 
+          in the car rental industry. We continue to innovate and expand our services to meet the 
+          evolving needs of our valued customers.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock body %}
